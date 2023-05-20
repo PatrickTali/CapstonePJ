@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Flask Flash Message to user  -->
+{% with messages = get_flashed_messages(with_categories = true) %}
+{% if messages %}
+{% for cat, msg in messages %}
+{% if cat == 'auth-success' %}
+<div class="container">
+    {{ msg }}
+    <button type="button" class="close" data-dismiss="alert"
+        onclick="this.parentElement.style.display='none'">&times;</button>
+</div>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<div class="card" style="width: 18rem;">
+    <img src="{{mydrink.img}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{mydrink.name}}</h5>
+      <p class="card-text">{{mydrink.intructions}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{mydrink.ingredient1}}:{{mydrink.measure1}}</li>
+      <li class="list-group-item">{{mydrink.ingredient2}}:{{mydrink.measure2}}</li>
+      <li class="list-group-item">{{mydrink.ingredient3}}:{{mydrink.measure3}}</li>
+      <li class="list-group-item">{{mydrink.ingredient4}}:{{mydrink.measure4}}</li>
+      <li class="list-group-item">{{mydrink.ingredient5}}:{{mydrink.measure5}}</li>
+      <li class="list-group-item">{{mydrink.ingredient6}}:{{mydrink.measure6}}</li>
+      <li class="list-group-item">{{mydrink.ingredient7}}:{{mydrink.measure7}}</li>
+      <li class="list-group-item">{{mydrink.ingredient8}}:{{mydrink.measure8}}</li>
+      <li class="list-group-item">{{mydrink.ingredient9}}:{{mydrink.measure9}}</li>
+      <li class="list-group-item">{{mydrink.ingredient10}}:{{mydrink.measure10}}</li>
+      <li class="list-group-item">{{mydrink.ingredient11}}:{{mydrink.measure11}}</li>
+      <li class="list-group-item">{{mydrink.ingredient12}}:{{mydrink.measure12}}</li>
+      <li class="list-group-item">{{mydrink.ingredient13}}:{{mydrink.measure13}}</li>
+      <li class="list-group-item">{{mydrink.ingredient14}}:{{mydrink.measure14}}</li>
+      <li class="list-group-item">{{mydrink.ingredient15}}:{{mydrink.measure15}}</li>
+
+    </ul>
+    </div>
+  </div>
+
+  {% endblock %}

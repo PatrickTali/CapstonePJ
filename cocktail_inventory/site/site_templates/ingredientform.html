@@ -1,0 +1,13 @@
+<form action='{{url_for("site.profile")}}'method = "POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset id="ingredient-field">
+            {{ form.ingredient.label }}            
+            {{ form.ingredient(class = "form-control", placeholder="Ingredient") }}
+        </fieldset>
+
+        
+        {{ form.submit(class = "btn btn-primary btn-block mt-2") }}
+
+    </div>   
+</form>
